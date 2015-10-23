@@ -1,0 +1,32 @@
+{
+  "name": "react-swipe-pinch",
+  "version": "1.0.0",
+  "description": "Adds an `onSwipe` event for React components.",
+  "main": "src/swipe.jsx",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Ash Zhang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "fbjs": "^0.3.2",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "clean-webpack-plugin": "^0.1.3",
+    "html-webpack-plugin": "^1.6.2",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
+  }
+}
