@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 import swipe from './swipe.jsx';
 
 
-const Box = swipe(class Page extends Component {
+const Box = swipe(class Box extends Component {
 
   render() {
     return (
