@@ -23,6 +23,7 @@ export default (Component) => class SwipeComponent extends Component {
     return (
       <div onTouchStart={this.onTouchStart}
            onTouchMove={this.onTouchMove}
+           onTouchCancel={this.onTouchEnd}
            onTouchEnd={this.onTouchEnd}>
         <Component {...this.props}>{this.props.children}</Component>
       </div>

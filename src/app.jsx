@@ -14,7 +14,7 @@ const Box = swipe(class Page extends Component {
 
   render() {
     return (
-      <div {...this.props}>Swiper</div>
+      <div {...this.props}>Swipe Me!</div>
     );
   }
 });
@@ -22,15 +22,41 @@ const Box = swipe(class Page extends Component {
 
 class Test extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      swipes: []
+    };
+
+    this.swipe = this.swipe.bind(this);
+  }
+
   render() {
+    const { swipes } = this.state,
+      swipeList = swipes.map((swipe) => {
+        return <li key={swipe.timeStamp}>{`Swiped ${swipe.direction}: from (${swipe.startX}, ${swipe.startY}) to (${swipe.endX}, ${swipe.endY}) at ${swipe.timeStamp}`}</li>;
+      }),
+      boxStyle = {
+        background: '#202020',
+        color: '#fff',
+        height: 200,
+        lineHeight: '200px',
+        textAlign: 'center'
+      };
+
     return (
-      <Box style={{ background: '#202020', color: '#fff', height: 200 }}
-           onSwipe={this.swipe} />
+      <div>
+        <Box style={boxStyle} onSwipe={this.swipe} />
+        <ul>{swipeList}</ul>
+      </div>
     );
   }
 
   swipe(e) {
-    alert(e.direction);
+    this.setState({
+      swipes: [e].concat(this.state.swipes)
+    });
   }
 }
 
