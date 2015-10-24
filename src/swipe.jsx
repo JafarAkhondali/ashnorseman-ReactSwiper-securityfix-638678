@@ -36,6 +36,7 @@ export default (Component) => class SwipeComponent extends Component {
   }
 
   onTouchMove(e) {
+    e.preventDefault();
     if (e.touches.length > 1) return;
     this._updateSwipe(e.touches[0]);
   }

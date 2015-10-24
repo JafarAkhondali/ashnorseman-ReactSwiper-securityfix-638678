@@ -42,3 +42,15 @@ Example
 -------
 
 [http://react-swiper.herokuapp.com](http://react-swiper.herokuapp.com)
+
+Tested Browsers
+---------------
+
+* iOS - Safari (√)
+* iOS - Chrome (√)
+* iOS - UC Browser (√)
+* iOS - QQ Browser (√)
+* Android - Chrome (√)
+* Android - UC Browser (√)
+* Android - QQ Browser (√)
+* Android - MIUI Built-in (√)
