@@ -15,7 +15,6 @@
   "author": "Ash Zhang",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3"
   },
   "devDependencies": {
     "babel-core": "^5.8.25",
