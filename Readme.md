@@ -1,10 +1,8 @@
-Usage
------
+## Usage
 
-1. swipe(Component) Function
-============================
+### 1. swipe(Component) Function
 
-    ``` javascript
+    ```javascript
     import swipe from 'react-swiper-ash';
     
     // Make `onSwipe` usable on the `Box`
@@ -32,10 +30,9 @@ Usage
     }
     ```
 
-2. Swiper Component
-===================
+### 2. Swiper Component
 
-    ``` javascript
+    ```javascript
     import { Swiper } from 'react-swiper-ash';
     
     class Box2 extends Component {
@@ -63,8 +60,7 @@ Usage
     }
     ```
     
-Event properties
-----------------
+## Event properties
 
 * e.timeStamp
 * e.direction => left, right, up, down
@@ -74,13 +70,11 @@ Event properties
 * e.endY
 * e.target
 
-Example
--------
+## Example
 
 [http://react-swiper.herokuapp.com](http://react-swiper.herokuapp.com)
 
-Tested Browsers
----------------
+## Tested Browsers
 
 * iOS - Safari (√)
 * iOS - Chrome (√)
