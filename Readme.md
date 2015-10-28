@@ -1,6 +1,10 @@
 Usage
 -----
 
+1. swipe(Component) Function
+============================
+
+    ``` javascript
     import swipe from 'react-swiper-ash';
     
     // Make `onSwipe` usable on the `Box`
@@ -18,7 +22,7 @@ Usage
     
       render() {
         return (
-          <Box style={boxStyle} onSwipe={this.swipe} />
+          <Box onSwipe={this.swipe} />
         );
       }
     
@@ -26,6 +30,38 @@ Usage
         console.log(e);
       }
     }
+    ```
+
+2. Swiper Component
+===================
+
+    ``` javascript
+    import { Swiper } from 'react-swiper-ash';
+    
+    class Box2 extends Component {
+    
+      render() {
+        return (
+          <Swiper onSwipe={this.props.onSwipe}>
+            <div {...this.props}>&lt;Swiper /&gt;</div>
+          </Swiper>
+        )
+      }
+    }
+    
+    class Test extends Component {
+    
+      render() {
+        return (
+          <Box2 onSwipe={this.swipe} />
+        );
+      }
+    
+      swipe(e) {
+        console.log(e);
+      }
+    }
+    ```
     
 Event properties
 ----------------

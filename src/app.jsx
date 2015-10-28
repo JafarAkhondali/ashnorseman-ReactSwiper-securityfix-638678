@@ -7,17 +7,30 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import swipe from './swipe.jsx';
+import swipe, { Swiper } from './swipe.jsx';
 
 
 const Box = swipe(class Box extends Component {
 
   render() {
     return (
-      <div {...this.props}>Swipe Me!</div>
+      <div {...this.props}>swipe(Component)</div>
     );
   }
 });
+
+class Box2 extends Component {
+
+  render() {
+    return (
+      <Swiper onSwipe={this.props.onSwipe}>
+        <div {...this.props}>
+          &lt;Swiper /&gt;
+        </div>
+      </Swiper>
+    )
+  }
+}
 
 
 class Test extends Component {
@@ -40,14 +53,16 @@ class Test extends Component {
       boxStyle = {
         background: '#202020',
         color: '#fff',
-        height: 200,
-        lineHeight: '200px',
+        height: 100,
+        lineHeight: '100px',
+        marginBottom: 10,
         textAlign: 'center'
       };
 
     return (
       <div>
-        <Box style={boxStyle} onSwipe={this.swipe} />
+        <Box style={boxStyle} onSwipe={this.swipe} onClick={this.handleClick} />
+        <Box2 style={boxStyle} onSwipe={this.swipe} onClick={this.handleClick} />
         <ul>{swipeList}</ul>
       </div>
     );
@@ -57,6 +72,10 @@ class Test extends Component {
     this.setState({
       swipes: [e].concat(this.state.swipes)
     });
+  }
+
+  handleClick(e) {
+    console.log('click');
   }
 }
 

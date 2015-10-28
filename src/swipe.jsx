@@ -10,8 +10,7 @@ const React = require('react');
 
 const SWIPE_THRESHOLD = 50;
 
-module.exports = (Component) => React.createClass({
-  displayName: 'Swiper',
+const Swiper = React.createClass({
 
   render() {
     return (
@@ -19,7 +18,7 @@ module.exports = (Component) => React.createClass({
            onTouchMove={this.onTouchMove}
            onTouchCancel={this.onTouchEnd}
            onTouchEnd={this.onTouchEnd}>
-        <Component {...this.props}>{this.props.children}</Component>
+        {this.props.children}
       </div>
     );
   },
@@ -85,3 +84,22 @@ module.exports = (Component) => React.createClass({
     this.state = {};
   }
 });
+
+const swipe = (Component) => {
+
+  return React.createClass({
+    displayName: Component.name,
+
+    render() {
+      return (
+        <Swiper onSwipe={this.props.onSwipe}>
+          <Component {...this.props}>{this.props.children}</Component>
+        </Swiper>
+      );
+    }
+  });
+};
+
+swipe.Swiper = Swiper;
+
+module.exports = swipe;

@@ -16,6 +16,7 @@ var path = require('path'),
     });
 
 if (TARGET === 'start' || TARGET === 'dev') {
+  console.log(TARGET);
   module.exports = {
     devServer: {
       colors: true,
