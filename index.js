@@ -12,6 +12,11 @@ var http = require('http'),
     port = process.env.PORT || 9090;
 
 http.createServer(function(req, res) {
+    if (path.normalize(decodeURI(req.url)) !== decodeURI(req.url)) {
+        res.statusCode = 403;
+        res.end();
+        return;
+    }
   var uri = url.parse(req.url).pathname,
       filename = path.join(__dirname, 'build', uri);
 
